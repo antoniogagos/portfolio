@@ -160,21 +160,6 @@ video {
   box-shadow: 6px 20px 20px rgba(0,0,0,0.04);
 }
 
-.work-img {
-  background-attachment: fixed;
-  background-position: initial;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* border-bottom-right-radius: 20px;
-  border-top-right-radius: 20px; */
-  height: 65vh;
-  width: 100%;
-}
-
-.interiorista-img {
-  background-image: url(./images/interiorista.jpg);
-}
-
 .work-section--description {
   display: flex;
   flex-direction: column;
@@ -203,7 +188,7 @@ video {
   max-width: 285px;
 }
 
-.interiorista, .rankup {
+.Interiorista, .Rankup {
   height: 550px;
 }
 
@@ -231,22 +216,22 @@ video {
   object-fit: cover;
 }
 
-.interiorista {
+.Interiorista {
   background: #4C5C68 !important;
   box-sizing: border-box;
   color: #fff;
 }
 
-.interiorista .work-button {
+.Interiorista .work-button {
   border-color: #fff;
   color: #fff;
 }
 
-.interiorista .work-details {
+.Interiorista .work-details {
   color: #fff;
 }
 
-.rankup img, .interiorista img {
+.Rankup img, .Interiorista img {
   /* border-top-right-radius: 20px;
   border-bottom-right-radius: 20px; */
   height: 100%;

@@ -1,6 +1,6 @@
 <section>
   <div class="work-hero">
-    <div class="hero-title"><span class="bold">{{title}}</span> {{subtitle}}</div>
+    <div class="hero-title"><span class="bold">{{title}}</span> {{description}}</div>
     <div class="hero-list">
       <div class="list-container">
         <div class="list-container--title">Overview</div>
@@ -20,7 +20,7 @@
   </div>
   <div class="work-showcase">
     {% for img in mainImgs %}
-      <img src="./images/{{img}}" alt="rankup {{img}}">
+      <img src="./images/{{img}}" alt="{{title}} {{img}}">
     {% endfor %}
   </div>
   <div class="work-explanation">
