@@ -37,9 +37,12 @@ header {
 }
 
 footer {
-  width: 90vw;
+  width: 100%;
+  max-width: 815px;
   margin: 0 auto;
   padding-bottom: 100px;
+  border-top: 1px solid #eee;
+  margin-top: 35px;
 }
 
 a {
@@ -445,12 +448,18 @@ footer a {
 }
 
 .work-gallery {
+  max-width: 815px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
 .work-gallery img {
-  margin: 0 auto;
-  width: 200px;
-  grid-gap: 25px;
+  width: 255px;
+  margin: 20px 0;
 }
+
+.work-gallery img:nth-child(even) {
+  margin-left: auto;
+}
+
