@@ -1,14 +1,11 @@
 ---
 layout: layout.liquid
-pagination:
-  data: collections.works
-  size: 2
-  alias: works
+tags: section
+title: Work
 ---
 
 <div class="hero-wrapper">
   <div class="hero">
-    <!-- <img class="hero-img" src="./images/man.jpg" alt="me"> -->
     <div class="hero-description">
     Hi, I'm <span style="color: #F78154">Antonio</span> <br>
     Front-End Developer 👨‍💻 <br> 
@@ -25,55 +22,38 @@ pagination:
   </div>
 </div>
 
-<section class="work-section">
-  {% for work in works reversed %}
-  <a href="{{work.url}}">
-    <section class="{{work.data.title}}">
-        <div class="work-section--description">
-          <div class="title">{{work.data.title}}</div>
-          <div class="work-stack">
-            {% for stack in work.data.stack %}
-            <div class="work-stack--item">{{stack}}</div>
+<section class="project-section">
+  {% for project in collections.mainProjects %}
+  <a href="{{project.url}}">
+    <section class="{{project.data.name}}">
+        <div class="project-section--description">
+          <div class="title">{{project.data.title}}</div>
+          <div class="project-stack">
+            {% for stack in project.data.stack %}
+            <div class="project-stack--item">{{stack}}</div>
             {% endfor %}
           </div>
-          <div class="work-details">{{work.data.subtitle}}</div>
-          <button class="work-button">Read more</button>
+          <div class="project-details">{{project.data.subtitle}}</div>
+          <button class="project-button">View project</button>
         </div>
-        <img src="./images/{{work.data.showcase}}" alt="{{work.data.title}}">
+        <img src="./images/{{project.data.showcaseImg}}" alt="{{project.data.title}}">
     </section>
   </a>
   {% endfor %}
 
-  <section class="old-works">
-  {% for oldWork in collections.old-works %}
-  <div class="old-work">
-    <a href={{oldWork.url}} rel="noopener noreferrer">
-      <img src="./images/softbank.webp">
-      <div class="old-work-description">
-        <div class="old-work-title">{{oldWork.data.title}}</div>
-        <div class="old-work-text">{{oldWork.data.subtitle}}</div>
-        <button class="work-button">Read more</button>
+  <section class="secondary-projects">
+  {% for project in collections.secondaryProjects %}
+  <div class="secondary">
+    <a href="{{project.url}}" rel="noopener noreferrer">
+      <img src="./images/softbank.webp" alt="{{project.data.title}}">
+      <div class="secondary-project-description">
+        <div class="secondary-project-title">{{project.data.title}}</div>
+        <div class="secondary-project-text">{{project.data.subtitle}}</div>
+        <button class="project-button">View project</button>
       </div>
     </a>
   </div>
   {% endfor %}
-    
-    <!-- <div class="old-work">
-      <img src="./images/softbank.webp">
-      <div class="old-work-description">
-        <div class="old-work-title">Softbank for Windows Phone</div>
-        <div class="old-work-text">Softbank's skinnable banking solution for Windows Phone</div>
-        <button class="work-button">Read more</button>
-      </div>
-    </div>
-    <div class="old-work">
-      <img src="./images/softbank.webp">
-      <div class="old-work-description">
-        <div class="old-work-title">Softbank for Windows Phone</div>
-        <div class="old-work-text">Softbank's skinnable banking solution for Windows Phone</div>
-        <button class="work-button">Read more</button>
-      </div>
-    </div> -->
   </section>
 </section>
 {% include footer.html %}
