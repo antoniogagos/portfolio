@@ -36,6 +36,14 @@ header {
   justify-content: space-between;
 }
 
+#light-header-theme {
+  color: #fff;
+}
+
+#light-header-theme .header-logo-link {
+  color: #fff;
+}
+
 footer {
   width: 100%;
   max-width: 1050px;
@@ -369,12 +377,11 @@ footer a {
 
 /* WORK SECTION */
 
-
-
 .work-hero {
   height: 100vh;
   margin-top: -125px;
   background-size: cover;
+  background-position: center;
   padding-top: 125px;
   color: #fffffff4;
   box-sizing: border-box;
@@ -477,7 +484,7 @@ footer a {
 .work-explanation {
   background: #1b4b6f;
   color: #fff;
-  padding: 20px;
+  padding: 80px 40px;
 }
 
 .explanation-type {
@@ -649,3 +656,9 @@ footer a {
 }
 
 
+
+/* <div class="work-gallery">
+  {% for img in secondaryImgs %}
+    <img src="./images/{{img}}" alt="{{img}} rankup"/>
+  {% endfor %}
+</div> */

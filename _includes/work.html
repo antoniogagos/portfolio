@@ -1,5 +1,5 @@
 <section>
-  <div class="work-hero" style="background-image: url(./images/rankup-bg.png)">
+  <div class="work-hero" style="background-image: url('./images/{{imageBg}}')">
     <div class="work-hero--wrapper">
       <div class="hero-title bold">
         <div class="border-top"></div>
@@ -51,11 +51,6 @@
         <p>I interviewed friends, family, and co-workers to understand their problems, needs, and experiences. After that, I researched current apps and online stores that function as market places, and also other online stores. I wrote on paper the main features the app needed to have to solve the problems and started sketching.</p>
       </div>
     </div>
-  </div>
-  <div class="work-gallery">
-    {% for img in secondaryImgs %}
-      <img src="./images/{{img}}" alt="{{img}} rankup"/>
-    {% endfor %}
   </div>
 </section>
 {% assign previousPost = collections.sortedProjects | getPreviousCollectionItem: page %}

@@ -1,5 +1,5 @@
 <header>
-  <div class="header-wrapper">
+  <div class="header-wrapper" {% if page.url contains "projects"%} id="light-header-theme" {%endif%}>
     <a class="header-logo-link" href="/">ag.</a>
     <nav>
     {%- for post in collections.section reversed-%}
