@@ -1,6 +1,6 @@
 <header>
   <div class="header-wrapper">
-    <a class="header-logo-link" href="/"><img width="35" src="/images/logo.png" alt="logo"/></a>
+    <a class="header-logo-link" href="/">ag.</a>
     <nav>
     {%- for post in collections.section reversed-%}
       <a {% if page.url == post.url %} aria-current="page"{% endif %} href="{{ post.url }}">{{ post.data.title }}</a>
