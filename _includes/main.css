@@ -48,7 +48,6 @@ footer {
   width: 100%;
   max-width: 1050px;
   margin: 0 auto;
-  border-top: 1px solid #eee;
   margin-top: 35px;
   padding: 0 20px 100px 20px;
   box-sizing: border-box;
@@ -401,8 +400,9 @@ footer a {
   flex-direction: column;
   height: calc(100% - 125px);
   max-width: 1050px;
-  margin: 0 auto;
-  padding: 0 80px;
+  margin: 0 55px;
+  padding: 0 55px;
+  box-sizing: border-box;
 }
 
 .border-top {
@@ -415,7 +415,7 @@ footer a {
 .hero-title {
   font-size: 72px;
   letter-spacing: 0.6px;
-  text-shadow: 12px -12px 6px rgba(0,0,0,0.12);
+  text-shadow: 12px -12px 6px rgba(0,0,0,0.06);
   margin-bottom: 20px;
 }
 
