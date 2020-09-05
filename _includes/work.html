@@ -53,25 +53,29 @@
     </div>
   </div>
 </section>
+
+
 {% assign previousPost = collections.sortedProjects | getPreviousCollectionItem: page %}
 {% assign nextPost = collections.sortedProjects | getNextCollectionItem: page %}
 <nav class="projects-nav">
-  <div class="projects-nav--item">
-    {% if previousPost %}
-    <a href="{{ previousPost.url }}">
-      <div class="item--text">PREV</div>
-      <div class="item--title">{{ previousPost.data.title }}</div>
-    </a>
-    {% endif %}
-  </div>
-  <div class="separator"></div>
-  <div class="projects-nav--item">
-    {% if nextPost %}
-    <a href="{{ nextPost.url }}">
-      <div class="item--text align-right">Next</div>
-      <div class="item--title">{{ nextPost.data.title }}</div>
-    </a>
-    {% endif %}
+  <div class="projects-nav--wrapper">
+    <div class="projects-nav--item">
+      {% if previousPost %}
+      <a href="{{ previousPost.url }}">
+        <div class="item--text">PREV</div>
+        <div class="item--title">{{ previousPost.data.title }}</div>
+      </a>
+      {% endif %}
+    </div>
+    <div class="separator"></div>
+    <div class="projects-nav--item">
+      {% if nextPost %}
+      <a href="{{ nextPost.url }}">
+        <div class="item--text align-right">Next</div>
+        <div class="item--title">{{ nextPost.data.title }}</div>
+      </a>
+      {% endif %}
+    </div>
   </div>
 </nav>
 

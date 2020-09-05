@@ -525,12 +525,17 @@ footer a {
 }
 
 .projects-nav {
-  display: grid;
-  grid-template-columns: 1fr max-content 1fr;
-  margin: 0 auto;
   background: #ffecb5;
   padding: 55px 40px;
   box-shadow: 0px -1px 20px 0 rgba(0,0,0,0.14);
+}
+
+.projects-nav--wrapper {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  margin: 0 auto;
+  max-width: 1050px;
+  width: 100%;
 }
 
 .item--text {
