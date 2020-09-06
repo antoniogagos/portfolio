@@ -428,13 +428,13 @@ footer a {
 .hero-list {
   flex-direction: row;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr max-content;
   justify-content: space-between;
-  grid-gap: 4%;
-  width: 80%;
+  grid-gap: 5px;
+  width: 100%;
   margin: 0 auto;
   max-width: 1050px;
-  padding: 55px 0;
+  padding: 55px 25px;
 }
 
 .bold {
@@ -459,7 +459,9 @@ footer a {
   line-height: 2;
   color: #000000cc;
   padding: 0;
+  margin: 0;
   list-style-type: none;
+  max-width: 400px;
 }
 
 .work-showcase {
@@ -551,6 +553,7 @@ footer a {
 
 .projects-nav .projects-nav--item:nth-child(3) {
   margin-left: auto;
+  text-align: right;
 }
 
 .align-right {
@@ -613,7 +616,7 @@ footer a {
     padding: 0;
     justify-content: flex-start;
     margin-top: 20px;
-    padding: 0 20px;
+    padding: 25px;
   }
 
   .rankup img, .interiorista img {
@@ -627,11 +630,11 @@ footer a {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     margin-bottom: 35px;
-    box-shadow: none;
-    background: inherit;
+    background: #fff;
+    width: 90%;
   }
 
-  .project-section .interiorista {
+  /* .project-section .interiorista {
     background: inherit;
     color: inherit;
   }
@@ -639,7 +642,7 @@ footer a {
   .interiorista .project-button {
     border-color: inherit;
     color: inherit;
-  }
+  } */
 
   .project-stack {
     margin-top: 0;
