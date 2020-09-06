@@ -32,8 +32,11 @@
       </div>
     </div>
     <div class="list-container">
-      <div class="list-container--title"><div class="border-top-light"></div>Tools</div>
-      <div class="list-container--description">{{tools}}</div>
+      <div class="list-container--title"><div class="border-top-light"></div>Stack</div>
+      <ul class="list-container--description">
+      {% for s in stack %}
+          <li>{{s}}</li>
+      {% endfor %}</div>
     </div>
   </div>
   <div class="work-showcase {{name}}">
@@ -43,20 +46,47 @@
   </div>
   <div class="work-explanation">
     <div class="work-explanation--wrapper">
+    {% if motivation %} 
       <div class="work-explanation--section">
-        <div class="explanation-type">Problem & Motivation</div>
-        <p>
-          A study found that two-thirds of international students regularly experience loneliness because of how far away from home they are. As of 2018, there were nearly 1 million international students in the US alone! This could lead to psychological distress, dropping out, or poor academic performance.
-          <br>
-          How can we help promote a sense of belonging & connectedness in international students?
-          <br>
-          All 3 of us are international students who had faced loneliness after coming to the US and were motivated to find solutions to this widespread yet serially ignored problem.
-        </p>
+        <div class="explanation-type">Motivation</div>
+         {{motivation}}
       </div>
+    {% endif %}
+
+    {% if situation %} 
+      <div class="work-explanation--section">
+        <div class="explanation-type">Situation</div>
+         {{situation}}
+      </div>
+    {% endif %}
+
+    {% if task %} 
+      <div class="work-explanation--section">
+        <div class="explanation-type">Task</div>
+        {{task}}
+      </div>
+    {% endif %}
+
+    {% if problem %} 
+      <div class="work-explanation--section">
+        <div class="explanation-type">Problem</div>
+         {{problem}}
+      </div>
+      {% endif %}
+
+    {% if process %} 
       <div class="work-explanation--section">
         <div class="explanation-type">Process</div>
-        <p>I interviewed friends, family, and co-workers to understand their problems, needs, and experiences. After that, I researched current apps and online stores that function as market places, and also other online stores. I wrote on paper the main features the app needed to have to solve the problems and started sketching.</p>
+        {{process}}
       </div>
+    {% endif %}
+
+    {% if results %} 
+      <div class="work-explanation--section">
+        <div class="explanation-type">Results</div>
+        {{results}}
+      </div>
+    {% endif %}
     </div>
   </div>
 </section>
