@@ -18,6 +18,7 @@ main {
 }
 
 header {
+  /* transform: translateY(-125px); */
   height: 125px;
   padding: 0 5%;
   z-index: 5;
@@ -25,6 +26,11 @@ header {
   top: 0;
   width: 100%;
   box-sizing: border-box;
+}
+
+.hero-description {
+  opacity: 0;
+  transform: translateX(125px);
 }
 
 .header-wrapper {
@@ -35,6 +41,7 @@ header {
   box-sizing: border-box;
   align-items: center;
   justify-content: space-between;
+  max-width: 1250px;
 }
 
 #light-header-theme {
@@ -90,10 +97,20 @@ nav a {
   font-size: 32px;
   font-weight: bold;
   color: #893168;
+
+  transform: translateX(-75px);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+header nav {
+  transform: translateY(-125px);
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
 .hero {
-  font-size: 52px;
+  font-size: 48px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -136,6 +153,7 @@ nav a {
   top: -125px;
   width: 100%;
   z-index: 0;
+  transform: scale(1.25);
 }
 
 video {

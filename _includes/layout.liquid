@@ -16,4 +16,47 @@
     <main>{{ content }}</main>
     {% comment %} {{ content }} {% endcomment %}
   </body>
+  <script>
+    window.onload = (event) => {
+      const header_nav = document.querySelector('header nav');
+      const hero_description = document.querySelector('.hero-description');
+      const header_logo = document.querySelector('.header-logo-link');
+
+
+      const header_logo_frames = [
+        {transform: 'translateX(-75px)', opacity: 0},
+        {transform: 'translateX(0)', opacity: 1}
+      ];
+
+      const hero_description_frames = [
+        {transform: 'translateX(125px)', opacity: 0},
+        {transform: 'translateX(0)', opacity: 1}
+      ]
+
+      const header_nav_frames = [
+        {transform: 'translateY(-125px)', opacity: 0},
+        {transform: 'translateY(0)', opacity: 1},
+      ];
+      
+
+      requestAnimationFrame(_ => {
+        const description_animation = hero_description.animate(hero_description_frames, {duration: 500});
+        description_animation.onfinish = () => {
+          hero_description.style.opacity = 1;
+          hero_description.style.transform = 'translateX(0)';
+        }
+        const header_nav_animation = header_nav.animate(header_nav_frames, {duration: 250});
+        header_nav_animation.onfinish = () => {
+          header_nav.style.transform = 'translateY(0)';
+          header_nav.style.opacity = 1;
+          const anim = header_logo.animate(header_logo_frames, {duration: 250});
+          anim.onfinish = () => {
+            header_logo.style.transform = 'translateX(0)';
+            header_logo.style.opacity = 1;
+          }
+        }
+      });
+      animated = true;
+    };
+  </script>
 </html>
