@@ -18,7 +18,6 @@ main {
 }
 
 header {
-  /* transform: translateY(-125px); */
   height: 125px;
   padding: 0 5%;
   z-index: 5;
@@ -26,11 +25,6 @@ header {
   top: 0;
   width: 100%;
   box-sizing: border-box;
-}
-
-.hero-description {
-  opacity: 0;
-  transform: translateX(125px);
 }
 
 .header-wrapper {
@@ -97,17 +91,8 @@ nav a {
   font-size: 32px;
   font-weight: bold;
   color: #893168;
-
-  transform: translateX(-75px);
-  opacity: 0;
-  will-change: transform, opacity;
 }
 
-header nav {
-  transform: translateY(-125px);
-  opacity: 0;
-  will-change: transform, opacity;
-}
 
 .hero {
   font-size: 48px;
@@ -169,6 +154,7 @@ video {
 }
 
 .selected-work {
+  z-index: 2;
   position: absolute;
   bottom: 15px;
   right: 0;
