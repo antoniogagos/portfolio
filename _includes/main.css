@@ -1,13 +1,16 @@
-html {
-  width: 100%;
-  scroll-behavior: smooth;
+:root {
+  --main-text: #153243;
+  --main-secondary-text: #3F51B5;
+  --highlight: #ffec76;
+  --button: #37474f;
+  --text-reversed: #f7f7f7;
 }
 
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: #fafbff;
-  color: #153243;
+  color: var(--main-text);
   font-size: 16px;
   position: relative;
   margin: 0 auto;
@@ -25,6 +28,27 @@ header {
   top: 0;
   width: 100%;
   box-sizing: border-box;
+}
+
+.hero-description span {
+  color: var(--main-secondary-text);
+}
+
+.arrow-bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+
 }
 
 .header-wrapper {
@@ -80,17 +104,24 @@ nav a {
   cursor: pointer;
   margin: 0 10px;
   display: block;
+  position: relative;
+}
+
+.external-link-icon {
+  width: 15px;
+  height: 15px;
+  fill: #b9cdda;
 }
 
 [aria-current="page"] {
-  color: #893168;
+  text-decoration: underline;
 }
 
 .header-logo-link {
   display: block;
   font-size: 32px;
   font-weight: bold;
-  color: #893168;
+  color: var(--main-secondary-text);
 }
 
 
@@ -119,6 +150,7 @@ nav a {
 }
 
 .hero-wrapper {
+  overflow: hidden;
   position: relative;
   width: 100%;
   height: 100vh;
@@ -156,7 +188,7 @@ video {
 .selected-work {
   z-index: 2;
   position: absolute;
-  bottom: 15px;
+  bottom: 110px;
   right: 0;
   left: 0;
   text-align: center;
@@ -170,6 +202,15 @@ video {
   margin: 0 auto;
 }
 
+.project-gradient { 
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 8px;
+  height: 100%;
+}
+
 .project-section section {
   background: #fff;
   display: grid;
@@ -178,7 +219,7 @@ video {
   width: 100%;
   margin: 0 auto;
   margin-bottom: 100px;
-  /* border-radius: 20px; */
+  position: relative;
   box-shadow: 6px 20px 20px rgba(0,0,0,0.04);
 }
 
@@ -190,14 +231,24 @@ video {
 }
 
 .project-button {
-  width: 155px;
-  background: none;
-  border: 2px solid #153242;
-  padding: 8px 0;
-  font-size: 14px;
-  color: #153242;
-  font-weight: 600;
-  box-sizing: border-box;
+  width: 175px;
+  background: var(--button);
+  padding: 4px 0;
+  border: 3px solid var(--button);
+  box-shadow: 0 0 0 3px var(--button);
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  transform: translate3d(-8px, -8px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  color: var(--text-reversed);
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.button-wrapper:hover .project-button{
+  transform: translate3d(0, 0, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transition: 250ms transform ease-out;
 }
 
 .project-details {
@@ -207,7 +258,7 @@ video {
   max-width: 285px;
 }
 
-.project-section .interiorista, .project-section .rankup {
+.project-section section {
   height: 550px;
 }
 
@@ -219,7 +270,7 @@ video {
 }
 
 .project-stack--item {
-  background: #ffec76;
+  background: var(--highlight);
   margin: 0 4px 4px 0;
   padding: 5px 10px;
   color: #000000d1;
@@ -234,16 +285,30 @@ video {
 .project-section .interiorista {
   background: #4C5C68;
   box-sizing: border-box;
-  color: #fff;
+  color: var(--text-reversed);
 }
 
-.interiorista .project-button {
-  border-color: #fff;
-  color: #fff;
-}
-
-.rankup img, .interiorista img {
+.project-section img {
   height: 100%;
+}
+
+.button-border {
+  display: inline-block;
+  background-color: transparent;
+  box-shadow: 0 0 0 3px var(--button);
+  transform: translate(11px, 11px);
+}
+
+.button-wrapper {
+  width: fit-content;
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: -7px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
 }
 
 section.secondary-projects {
@@ -256,7 +321,8 @@ section.secondary-projects {
 }
 
 .secondary {
-  background: #f7f7f7;
+  height: 100%;
+  background: var(--text-reversed);
 }
 
 .secondary-project-text {
@@ -319,10 +385,7 @@ footer a {
   color: #153242a8;
 }
 
-
-
 /* about page */
-
 .about-section {
   display: grid;
   grid-template-columns: 0.6fr 1fr;
@@ -366,7 +429,7 @@ footer a {
   width: 100%;
   height: 6px;
   position: absolute;
-  background: #89316826;
+  background: #3f51b514;
   border-radius: 15px;
   margin-top: 4px;
 }
@@ -638,16 +701,6 @@ footer a {
     width: 90%;
   }
 
-  /* .project-section .interiorista {
-    background: inherit;
-    color: inherit;
-  }
-
-  .interiorista .project-button {
-    border-color: inherit;
-    color: inherit;
-  } */
-
   .project-stack {
     margin-top: 0;
   }
@@ -768,10 +821,5 @@ footer a {
   100% {
       opacity: 0;
       transform: translate(0,36px);
+  }
 }
-
-/* <div class="work-gallery">
-  {% for img in secondaryImgs %}
-    <img src="./images/{{img}}" alt="{{img}} rankup"/>
-  {% endfor %}
-</div> */

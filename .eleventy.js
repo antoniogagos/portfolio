@@ -20,11 +20,4 @@ module.exports = function(eleventyConfig) {
     }).sort((a, b) => a.data.order - b.data.order);
   });
 
-  eleventyConfig.addCollection("secondaryProjects", function(collectionApi) {
-    return collectionApi.getFilteredByTag("projects").filter(function(item) {
-      // Side-step tags and do your own filtering
-      return !("showcase" in item.data);
-    }).sort((a, b) => a.data.order - b.data.order);
-  })
-
 };

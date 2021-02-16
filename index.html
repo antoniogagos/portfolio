@@ -7,9 +7,9 @@ title: Work
 <div class="hero-wrapper">
   <div class="hero">
     <div class="hero-description">
-    Hola! I'm <span style="color: #893168;">Antonio.</span> <br>
-    Front-End Developer 👨‍💻 <br> 
-    based in Madrid. 
+      Hola! I'm <span>Antonio.</span> <br>
+      Front-End Developer 👨‍💻 <br>
+      based in Madrid.
     </div>
   </div>
   <div class="background-video">
@@ -17,44 +17,37 @@ title: Work
       <source src="./yellow-vibe.mp4" type="video/mp4">
     </video>
   </div>
-  <div class="selected-work">
-    Selected work ↓
-  </div>
+  <div class="selected-work">Check out my work below ↓</div>
 </div>
 
 <section class="project-section">
   {% for project in collections.mainProjects %}
-  <a href="{{project.url}}">
+
+  <a {% if project.data.externalUrl == true %} href="{{project.data.url}}" target="_blank" {% endif %}
+    {% if project.data.externalUrl == false %} href="{{project.url}}" {% endif %}
+    rel="noopener noreferrer" tabindex="0">
     <section class="{{project.data.name}}">
-        <div class="project-section--description">
-          <div class="title">{{project.data.title}}</div>
-          <div class="project-stack">
-            {% for stack in project.data.stack %}
-            <div class="project-stack--item">{{stack}}</div>
-            {% endfor %}
-          </div>
-          <div class="project-details">{{project.data.subtitle}}</div>
-          <button class="project-button">View project</button>
+      <div class="project-section--description">
+        <div class="title">{{project.data.title}}</div>
+        <div class="project-stack">
+          {% for stack in project.data.stack %}
+          <div class="project-stack--item">{{stack}}</div>
+          {% endfor %}
         </div>
-        <img src="./images/{{project.data.showcaseImg}}" alt="{{project.data.title}}">
+        <div class="project-details">{{project.data.subtitle}}</div>
+        <div class="project-gradient">
+        </div>
+        <div class="button-wrapper">
+          <div class=button-border>
+            <button tab-index="0" class="project-button">View project</button>
+          </div>
+        </div>
+      </div>
+      <img src="./images/{{project.data.showcaseImg}}" alt="{{project.data.title}}">
     </section>
   </a>
   {% endfor %}
 
-  <section class="secondary-projects">
-  {% for project in collections.secondaryProjects %}
-  <div class="secondary">
-    <a href="{{project.url}}" rel="noopener noreferrer">
-      <img src="./images/softbank.webp" alt="{{project.data.title}}">
-      <div class="secondary-project-description">
-        <div class="secondary-project-title">{{project.data.title}}</div>
-        <div class="secondary-project-text">{{project.data.subtitle}}</div>
-        <button class="project-button">View project</button>
-      </div>
-    </a>
-  </div>
-  {% endfor %}
-  </section>
 </section>
 {% include footer.html %}
-<div class="copyright">Copyright © 2020 Antonio García. Made with ❤️ and Eleventy</div>
+<div class="copyright">Copyright © 2021 Antonio García. Made with Eleventy</div>
